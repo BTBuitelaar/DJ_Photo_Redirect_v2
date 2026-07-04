@@ -6,157 +6,164 @@
 <title>Jewelry Passport – Selas</title>
 <style>
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+margin: 0;
+padding: 0;
+box-sizing: border-box;
 }
 
 body {
-    background: #ffffff;
-    min-height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    padding: 60px 24px 80px;
-    font-family: 'Georgia', serif;
+background: #ffffff;
+min-height: 100vh;
+display: flex;
+justify-content: center;
+align-items: flex-start;
+padding: 60px 24px 80px;
+font-family: 'Georgia', serif;
+animation: fadeIn 1s ease-in;
+}
+
+@keyframes fadeIn {
+from { opacity: 0; }
+to { opacity: 1; }
 }
 
 .passport {
-    width: 100%;
-    max-width: 480px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 0;
+width: 100%;
+max-width: 480px;
+display: flex;
+flex-direction: column;
+align-items: center;
+gap: 0;
 }
 
 .passport-header {
-    width: 100%;
-    text-align: center;
-    margin-bottom: 32px;
+width: 100%;
+text-align: center;
+margin-bottom: 32px;
+display: flex;
+flex-direction: column;
+align-items: center;
 }
 
-.passport-label {
-    font-size: 11px;
-    letter-spacing: 5px;
-    text-transform: uppercase;
-    color: #999;
-    margin-bottom: 6px;
+.passport-logo {
+width: 130px;
+height: auto;
+margin-bottom: 14px;
 }
 
 .passport-title {
-    font-size: 28px;
-    font-weight: 700;
-    letter-spacing: 6px;
-    text-transform: uppercase;
-    color: #111;
+font-size: 28px;
+font-weight: 700;
+letter-spacing: 6px;
+text-transform: uppercase;
+color: #111;
 }
 
 .divider {
-    width: 100%;
-    height: 1px;
-    background: #e0e0e0;
-    margin: 0 0 32px 0;
+width: 100%;
+height: 1px;
+background: #e0e0e0;
+margin: 0 0 32px 0;
 }
 
 .stone-image {
-    width: 260px;
-    height: auto;
-    margin-bottom: 40px;
+width: 260px;
+height: auto;
+margin-bottom: 40px;
 }
 
 .name-block {
-    width: 100%;
-    text-align: center;
-    margin-bottom: 40px;
+width: 100%;
+text-align: center;
+margin-bottom: 40px;
 }
 
 .name-label {
-    font-size: 10px;
-    letter-spacing: 4px;
-    text-transform: uppercase;
-    color: #aaa;
-    margin-bottom: 8px;
+font-size: 10px;
+letter-spacing: 4px;
+text-transform: uppercase;
+color: #aaa;
+margin-bottom: 8px;
 }
 
 .name-value {
-    font-size: 36px;
-    font-weight: 300;
-    letter-spacing: 8px;
-    text-transform: uppercase;
-    color: #111;
+font-size: 36px;
+font-weight: 300;
+letter-spacing: 8px;
+text-transform: uppercase;
+color: #111;
 }
 
 .info-block {
-    width: 100%;
-    border-top: 1px solid #e8e8e8;
-    padding: 24px 0;
+width: 100%;
+border-top: 1px solid #e8e8e8;
+padding: 24px 0;
 }
 
 .info-label {
-    font-size: 9px;
-    letter-spacing: 4px;
-    text-transform: uppercase;
-    color: #aaa;
-    margin-bottom: 8px;
+font-size: 9px;
+letter-spacing: 4px;
+text-transform: uppercase;
+color: #aaa;
+margin-bottom: 8px;
 }
 
 .info-value {
-    font-size: 15px;
-    color: #222;
-    line-height: 1.7;
-    font-style: italic;
+font-size: 15px;
+color: #222;
+line-height: 1.7;
+font-style: italic;
 }
 
 .info-value.regular {
-    font-style: normal;
-    letter-spacing: 1px;
+font-style: normal;
+letter-spacing: 1px;
 }
 
 .info-value.mono {
-    font-family: 'Georgia', serif;
-    font-style: normal;
-    font-size: 14px;
-    letter-spacing: 1px;
+font-family: 'Georgia', serif;
+font-style: normal;
+font-size: 14px;
+letter-spacing: 1px;
 }
 </style>
 </head>
 <body>
 <div class="passport">
 
-    <div class="passport-header">
-        <p class="passport-label">Doric Jewelry</p>
-        <h1 class="passport-title">Jewelry Passport</h1>
-    </div>
+<div class="passport-header">
+<img src="doric-logo-text.png" alt="Doric Jewelry" class="passport-logo">
+<h1 class="passport-title">Jewelry Passport</h1>
+</div>
 
-    <div class="divider"></div>
+<div class="divider"></div>
 
-    <img src="labradoriet.png" alt="Labradorite" class="stone-image">
+<img src="labradoriet.png" alt="Labradorite" class="stone-image">
 
-    <div class="name-block">
-        <p class="name-label">Name</p>
-        <p class="name-value">Selas</p>
-    </div>
+<div class="name-block">
+<p class="name-label">Name</p>
+<p class="name-value">Selas</p>
+</div>
 
-    <div class="info-block">
-        <p class="info-label">Mineral</p>
-        <p class="info-value regular">Labradorite</p>
-    </div>
+<div class="info-block">
+<p class="info-label">Mineral</p>
+<p class="info-value regular">Labradorite</p>
+</div>
 
-    <div class="info-block">
-        <p class="info-label">Inspiration</p>
-        <p class="info-value">Named after Selas, the Ancient Greek word for a luminous light phenomenon, reflecting the shifting flashes of light revealed within labradorite.</p>
-    </div>
+<div class="info-block">
+<p class="info-label">Inspiration</p>
+<p class="info-value">Named after Selas, the Ancient Greek word for a luminous light phenomenon, reflecting the shifting flashes of light revealed within labradorite.</p>
+</div>
 
-    <div class="info-block">
-        <p class="info-label">Properties</p>
-        <p class="info-value regular">Transformation &bull; Protection &bull; Intuition</p>
-    </div>
+<div class="info-block">
+<p class="info-label">Properties</p>
+<p class="info-value regular">Transformation &bull; Protection &bull; Intuition</p>
+</div>
 
-    <div class="info-block">
-        <p class="info-label">Chemical Composition</p>
-        <p class="info-value mono">(Na,Ca)(Al,Si)&#8324;O&#8328;</p>
-    </div>
+<div class="info-block">
+<p class="info-label">Chemical Composition</p>
+<p class="info-value mono">(Na,Ca)(Al,Si)&#8324;O&#8328;</p>
+</div>
 
 </div>
 </body>
