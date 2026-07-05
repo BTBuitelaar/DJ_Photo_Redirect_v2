@@ -408,7 +408,7 @@ mctx.fill();
 var blurred = document.createElement('canvas');
 blurred.width = w; blurred.height = h;
 var bctx = blurred.getContext('2d');
-bctx.filter = 'blur(' + Math.max(1.5, edge * 0.32) + 'px)';
+bctx.filter = 'blur(' + Math.max(4, edge * 0.85) + 'px)';
 bctx.drawImage(mask, 0, 0);
 
 var data;
@@ -429,7 +429,40 @@ dx[i] = (lum(x + 1, y) - lum(x - 1, y)) / 2;
 dy[i] = (lum(x, y + 1) - lum(x, y - 1)) / 2;
 }
 }
-return { dx: dx, dy: dy };
+
+function boxBlur(src) {
+var tmp = new Float32Array(w * h);
+var r = 2;
+for (var y = 0; y < h; y++) {
+for (var x = 0; x < w; x++) {
+var sum = 0, cnt = 0;
+for (var k = -r; k <= r; k++) {
+var xx = x + k;
+if (xx < 0 || xx >= w) continue;
+sum += src[y * w + xx]; cnt++;
+}
+tmp[y * w + x] = sum / cnt;
+}
+}
+var out = new Float32Array(w * h);
+for (var y2 = 0; y2 < h; y2++) {
+for (var x2 = 0; x2 < w; x2++) {
+var sum2 = 0, cnt2 = 0;
+for (var k2 = -r; k2 <= r; k2++) {
+var yy = y2 + k2;
+if (yy < 0 || yy >= h) continue;
+sum2 += tmp[yy * w + x2]; cnt2++;
+}
+out[y2 * w + x2] = sum2 / cnt2;
+}
+}
+return out;
+}
+
+var dxS = boxBlur(boxBlur(dx));
+var dyS = boxBlur(boxBlur(dy));
+
+return { dx: dxS, dy: dyS };
 }
 
 function setup() {
