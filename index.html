@@ -111,9 +111,9 @@ video {
 </div>
 
 <script>
-setTimeout(function() {
-    window.location.href = 'passport.html';
-}, 5000);
+var __vid = document.querySelector('video'); var __redirected = false; function __goToPassport() { if (__redirected) return; __redirected = true; window.location.href = 'passport.html'; } if (__vid) { __vid.addEventListener('ended', __goToPassport); } setTimeout(function() {
+    __goToPassport();
+}, 10000);
 </script>
 </body>
 </html>
