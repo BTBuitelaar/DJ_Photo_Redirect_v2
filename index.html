@@ -111,7 +111,7 @@ video {
 </div>
 
 <script>
-var __vid = document.querySelector('video'); var __redirected = false; function __goToPassport() { if (__redirected) return; __redirected = true; sessionStorage.setItem('dj_intro_seen','1'); window.location.href = 'passport.html'; } if (__vid) { __vid.addEventListener('ended', __goToPassport); } setTimeout(function() {
+var __vid = document.querySelector('video'); if (__vid) { var __p = __vid.play(); if (__p && __p.catch) { __p.catch(function(){}); } } var __redirected = false; function __goToPassport() { if (__redirected) return; __redirected = true; sessionStorage.setItem('dj_intro_seen','1'); window.location.href = 'passport.html'; } if (__vid) { __vid.addEventListener('ended', __goToPassport); } setTimeout(function() {
     __goToPassport();
 }, 10000);
 </script>
