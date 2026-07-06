@@ -111,9 +111,9 @@ video {
 </div>
 
 <script>
-var __vid = document.querySelector('video'); if (__vid) { var __p = __vid.play(); if (__p && __p.catch) { __p.catch(function(){}); } } var __redirected = false; function __goToPassport() { if (__redirected) return; __redirected = true; sessionStorage.setItem('dj_intro_seen','1'); window.location.href = 'passport.html'; } if (__vid) { __vid.addEventListener('ended', __goToPassport); } setTimeout(function() {
-    __goToPassport();
-}, 10000);
+var __vid = document.querySelector('video'); var __redirected = false; var __FADE_MS = 500; var __DISPLAY_MS = 5000; function __fadeAndGo() { if (__redirected) return; __redirected = true; sessionStorage.setItem('dj_intro_seen','1'); document.body.style.transition = 'opacity ' + __FADE_MS + 'ms ease'; document.body.style.opacity = '0'; setTimeout(function(){ window.location.href = 'passport.html'; }, __FADE_MS); } function __checkPlayback() { if (__redirected) return; if (__vid.paused || __vid.currentTime === 0) { __fadeAndGo(); } else { setTimeout(__fadeAndGo, __DISPLAY_MS); } } if (__vid) { var __playAttempt; try { __playAttempt = __vid.play(); } catch (e) { __playAttempt = null; } if (__playAttempt && __playAttempt.then) { __playAttempt.then(function(){ setTimeout(__checkPlayback, 300); }).catch(function(){ __fadeAndGo(); }); } else { setTimeout(__checkPlayback, 300); } } else { __fadeAndGo(); } setTimeout(function() {
+    __fadeAndGo();
+}, 8000);
 </script>
 </body>
 </html>
